@@ -3,33 +3,34 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
-      declarations: [
-        AppComponent
-      ],
-    }).compileComponents();
-  });
+    let componentInstance: AppComponent;
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
+    beforeEach(async () => {
+        await TestBed.configureTestingModule({
+            imports: [
+                RouterTestingModule
+            ],
+            declarations: [
+                AppComponent
+            ],
+        }).compileComponents();
+    });
 
-  it(`should have as title 'json-web-tool'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('json-web-tool');
-  });
+    beforeEach(() => {
+        const fixture = TestBed.createComponent(AppComponent);
+        componentInstance = fixture.componentInstance;
+    });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('json-web-tool app is running!');
-  });
+    it('should create the app', () => {
+        expect(componentInstance).toBeTruthy();
+    });
+
+    // it(`should have as title 'json-web-tool'`, () => {
+    //     expect(app.title).toEqual('json-web-tool');
+    // });
+
+    // it('should render title', () => {
+    //     const compiled = fixture.nativeElement;
+    //     expect(compiled.querySelector('.content span').textContent).toContain('json-web-tool app is running!');
+    // });
 });
