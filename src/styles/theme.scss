@@ -3,21 +3,25 @@
 
 @include mat-core();
 
-$primary-theme: mat-light-theme((
-    color: (
-        primary : $color-light-primary,
-        accent  : $color-light-accent,
-        warn    : $color-light-warn,
+$primary-theme: mat-light-theme(
+    (
+        color: (
+            primary : $color-light-primary,
+            accent  : $color-light-accent,
+            warn    : $color-light-warn,
+        )
     )
-));
+);
 
-$dark-theme: mat-dark-theme((
-    color: (
-        primary : $color-dark-primary,
-        accent  : $color-dark-accent,
-        warn    : $color-dark-warn,
+$dark-theme: mat-dark-theme(
+    (
+        color: (
+            primary : $color-dark-primary,
+            accent  : $color-dark-accent,
+            warn    : $color-dark-warn,
+        )
     )
-));
+);
 
 @include angular-material-theme($primary-theme);
 
