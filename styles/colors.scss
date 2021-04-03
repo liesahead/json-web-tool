@@ -1,0 +1,79 @@
+@import '~@angular/material/theming';
+
+// This tool helped with colors choice: https://material.io/inline-tools/color/
+// Palletes generated with this tool  : http://mcg.mbitson.com/#!?mcgpalette0=%2300b3ff
+$color-light-primary-palette: (
+    50 : #e0f6ff,
+    100 : #b3e8ff,
+    200 : #80d9ff,
+    300 : #4dcaff,
+    400 : #26beff,
+    500 : #00b3ff,
+    600 : #00acff,
+    700 : #00a3ff,
+    800 : #009aff,
+    900 : #008bff,
+    A100 : #ffffff,
+    A200 : #f2f9ff,
+    A400 : #bfdeff,
+    A700 : #a6d1ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$color-light-accent-palette: (
+    50 : #ffece0,
+    100 : #ffcfb3,
+    200 : #ffaf80,
+    300 : #ff8e4d,
+    400 : #ff7626,
+    500 : #ff5e00,
+    600 : #ff5600,
+    700 : #ff4c00,
+    800 : #ff4200,
+    900 : #ff3100,
+    A100 : #ffffff,
+    A200 : #fff4f2,
+    A400 : #ffc8bf,
+    A700 : #ffb2a6,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+// Light theme
+$color-light-primary: mat-palette($color-light-primary-palette, 700);
+$color-light-accent : mat-palette($color-light-accent-palette, 500);
+$color-light-warn   : mat-palette($mat-red, 500);
+
+// Dark theme (using pre-built palettes here, no need to think too hard on the colors)
+$color-dark-primary: mat-palette($mat-pink, 500);
+$color-dark-accent : mat-palette($mat-blue-gray, 500);
+$color-dark-warn   : mat-palette($mat-red, 500);

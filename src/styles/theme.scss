@@ -1,0 +1,26 @@
+@import '~@angular/material/theming';
+@import '../../styles/colors';
+
+@include mat-core();
+
+$primary-theme: mat-light-theme((
+    color: (
+        primary : $color-light-primary,
+        accent  : $color-light-accent,
+        warn    : $color-light-warn,
+    )
+));
+
+$dark-theme: mat-dark-theme((
+    color: (
+        primary : $color-dark-primary,
+        accent  : $color-dark-accent,
+        warn    : $color-dark-warn,
+    )
+));
+
+@include angular-material-theme($primary-theme);
+
+.#{ $dark-theme-class-name } {
+    @include angular-material-color($dark-theme);
+}
