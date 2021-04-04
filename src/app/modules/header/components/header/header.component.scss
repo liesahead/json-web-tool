@@ -1,0 +1,17 @@
+@import 'styles';
+
+:host > .mat-toolbar {
+    @include transition-background-color;
+
+    align-items    : center;
+    display        : flex;
+    font-weight    : $font-weight-bold;
+    height         : 60px;
+    justify-content: space-between;
+    padding        : 0 20px;
+    width          : 100%;
+
+    > span {
+        font-size: 24px;
+    }
+}

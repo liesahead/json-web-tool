@@ -1,0 +1,11 @@
+@import 'styles';
+
+path {
+    fill: mat-color($color-light-accent);
+}
+
+@include for-dark-theme {
+    path {
+        fill: mat-color($color-dark-accent);
+    }
+}

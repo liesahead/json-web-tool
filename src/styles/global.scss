@@ -1,9 +1,13 @@
+@import '../../styles';
+
 html,
 body {
     font-size: 100%;
 }
 
 html {
+    @include transition-background-color;
+
     box-sizing: border-box;
 }
 
@@ -12,6 +16,11 @@ body {
     overflow: auto;
 }
 
+// Angular material overrides below
 .mat-raised-button {
     font-weight: 700;
+}
+
+.mat-tooltip {
+    font-size: 12px;
 }

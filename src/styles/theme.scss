@@ -25,6 +25,6 @@ $dark-theme: mat-dark-theme(
 
 @include angular-material-theme($primary-theme);
 
-.#{ $dark-theme-class-name } {
+#{ $dark-theme-selector } {
     @include angular-material-color($dark-theme);
 }

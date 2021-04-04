@@ -1,7 +1,7 @@
-<!-- <router-outlet></router-outlet> -->
+<router-outlet *ngIf="!loadingLazyRoute; else loadingState"></router-outlet>
 
-<button mat-raised-button
-        color="primary"
-        (click)="toggleTheme()">
-    Toggle theme
-</button>
+<ng-template #loadingState>
+    <div>
+        <mat-spinner diameter="120"></mat-spinner>
+    </div>
+</ng-template>

@@ -1,0 +1,5 @@
+@import './durations';
+
+@mixin transition-background-color {
+    transition: background-color $duration-short ease;
+}

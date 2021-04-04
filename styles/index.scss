@@ -1,6 +1,10 @@
-@import './colors.scss';
+$dark-theme-selector: '.jwt-dark-theme';
 
-$dark-theme-class-name      : jwt-dark-theme;
+@import './colors';
+@import './font-weights';
+@import './durations';
+@import './transitions';
+@import './for-dark-theme.scss';
 
 // TODO: try to make this export work correctly in TS
 // :export {

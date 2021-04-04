@@ -1,0 +1,6 @@
+// This is needed due to angular limitations when having multiple themes (specifically with accessing current theme colors SASS variables)
+@mixin for-dark-theme {
+    :host-context(#{ $dark-theme-selector }) {
+        @content;
+    }
+}
