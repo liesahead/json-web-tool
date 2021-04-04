@@ -3,6 +3,7 @@ import { RouteConfigLoadEnd, RouteConfigLoadStart, Router } from '@angular/route
 import { debounceTime, filter, tap } from 'rxjs/operators';
 
 @Component({
+    // eslint-disable-next-line @angular-eslint/component-selector
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss']

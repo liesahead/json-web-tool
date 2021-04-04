@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { APP_DARK_THEME_CLASS_NAME } from 'src/constants';
 
 @Component({
-    selector: 'app-header',
+    selector: 'jwt-header',
     templateUrl: './header.component.html',
     styleUrls: ['./header.component.scss'],
 })

@@ -28,18 +28,18 @@
             ],
             "rules": {
                 "@angular-eslint/component-selector": [
-                    "off",
+                    "warn",
                     {
                         "type": "element",
-                        "prefix": "app",
+                        "prefix": "jwt",
                         "style": "kebab-case"
                     }
                 ],
                 "@angular-eslint/directive-selector": [
-                    "error",
+                    "warn",
                     {
                         "type": "attribute",
-                        "prefix": "app",
+                        "prefix": "jwt",
                         "style": "camelCase"
                     }
                 ],
@@ -71,7 +71,8 @@
                 "prefer-arrow/prefer-arrow-functions": "off",
                 "no-extra-semi": "error",
                 "no-shadow": "off",
-                "@typescript-eslint/no-shadow": "error"
+                "@typescript-eslint/no-shadow": "error",
+                "@typescript-eslint/no-inferrable-types": "off"
             }
         },
         /**
