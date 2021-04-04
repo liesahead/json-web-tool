@@ -1,7 +1,5 @@
 <router-outlet *ngIf="!loadingLazyRoute; else loadingState"></router-outlet>
 
 <ng-template #loadingState>
-    <div>
-        <mat-spinner diameter="120"></mat-spinner>
-    </div>
+    <jwt-default-loader></jwt-default-loader>
 </ng-template>
