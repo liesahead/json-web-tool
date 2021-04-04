@@ -1,4 +1,8 @@
 {
     "html.format.wrapLineLength": 0,
-    "html.format.wrapAttributes": "force-aligned"
+    "html.format.wrapAttributes": "force-aligned",
+    "typescript.tsdk": "node_modules\\typescript\\lib",
+    "prettier.trailingComma": "all",
+    "typescript.preferences.quoteStyle": "single",
+    "prettier.singleQuote": true
 }
