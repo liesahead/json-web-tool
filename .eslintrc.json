@@ -1,0 +1,95 @@
+{
+    "root": true,
+    "ignorePatterns": [
+        "projects/**/*"
+    ],
+    "overrides": [
+        /**
+        * -----------------------------------------------------
+        * TYPESCRIPT FILES (components, services etc) (.ts)
+        * -----------------------------------------------------
+        */
+        {
+            "files": [
+                "*.ts"
+            ],
+            "parserOptions": {
+                "project": [
+                    "tsconfig.json",
+                    "tsconfig.spec.json",
+                    "e2e/tsconfig.json"
+                ],
+                "createDefaultProgram": true
+            },
+            "extends": [
+                "plugin:@angular-eslint/ng-cli-compat",
+                "plugin:@angular-eslint/ng-cli-compat--formatting-add-on",
+                "plugin:@angular-eslint/template/process-inline-templates"
+            ],
+            "rules": {
+                "@angular-eslint/component-selector": [
+                    "off",
+                    {
+                        "type": "element",
+                        "prefix": "app",
+                        "style": "kebab-case"
+                    }
+                ],
+                "@angular-eslint/directive-selector": [
+                    "error",
+                    {
+                        "type": "attribute",
+                        "prefix": "app",
+                        "style": "camelCase"
+                    }
+                ],
+                "@angular-eslint/no-host-metadata-property": "off",
+                "@typescript-eslint/consistent-type-definitions": "error",
+                "@typescript-eslint/dot-notation": "off",
+                "@typescript-eslint/explicit-member-accessibility": [
+                    "off",
+                    {
+                        "accessibility": "explicit"
+                    }
+                ],
+                "brace-style": [
+                    "error",
+                    "1tbs"
+                ],
+                "eol-last": "off",
+                "no-multiple-empty-lines": [
+                    "error",
+                    {
+                        "max": 1
+                    }
+                ],
+                "no-sparse-arrays": "error",
+                /* Manually added overrides below */
+                "no-underscore-dangle": "off",
+                "@typescript-eslint/naming-convention": "off",
+                "@typescript-eslint/member-ordering": "off",
+                "prefer-arrow/prefer-arrow-functions": "off",
+                "no-extra-semi": "error",
+                "no-shadow": "off",
+                "@typescript-eslint/no-shadow": "error"
+            }
+        },
+        /**
+        * -----------------------------------------------------
+        * COMPONENT TEMPLATES (config specific to Angular Component templates)
+        * -----------------------------------------------------
+        */
+        {
+            "files": [
+                "*.html"
+            ],
+            "extends": [
+                "plugin:@angular-eslint/template/recommended"
+            ],
+            "rules": {
+                /* Manually added overrides below */
+                "@angular-eslint/template/no-negated-async": "off"
+            }
+        }
+    ]
+}
