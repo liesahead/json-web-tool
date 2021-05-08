@@ -7,9 +7,8 @@ body {
 }
 
 html {
-    @include transition-background-color;
-
     box-sizing: border-box;
+    transition: background-color $duration-short ease;
 }
 
 body {
