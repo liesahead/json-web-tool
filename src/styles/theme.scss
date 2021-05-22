@@ -1,9 +1,9 @@
-@import '~@angular/material/theming';
+@use '~@angular/material' as mat;
 @import '../../styles/colors';
 
-@include mat-core();
+@include mat.core();
 
-$primary-theme: mat-light-theme(
+$primary-theme: mat.define-light-theme(
     (
         color: (
             primary : $color-light-primary,
@@ -13,7 +13,7 @@ $primary-theme: mat-light-theme(
     )
 );
 
-$dark-theme: mat-dark-theme(
+$dark-theme: mat.define-dark-theme(
     (
         color: (
             primary : $color-dark-primary,
@@ -23,8 +23,8 @@ $dark-theme: mat-dark-theme(
     )
 );
 
-@include angular-material-theme($primary-theme);
+@include mat.all-component-themes($primary-theme);
 
 #{ $dark-theme-selector } {
-    @include angular-material-color($dark-theme);
+    @include mat.all-component-colors($dark-theme);
 }

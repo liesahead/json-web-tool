@@ -1,11 +1,12 @@
+@use '~@angular/material' as mat;
 @import 'styles';
 
 path {
-    fill: mat-color($color-light-accent);
+    fill: mat.get-color-from-palette($color-light-accent);
 }
 
 @include for-dark-theme {
     path {
-        fill: mat-color($color-dark-accent);
+        fill: mat.get-color-from-palette($color-dark-accent);
     }
 }
