@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core';
     styleUrls: ['./default-loader.component.scss'],
 })
 export class DefaultLoaderComponent {
-    @Input() diameter: number = 120;
+    @Input() diameter: number = 100;
 }

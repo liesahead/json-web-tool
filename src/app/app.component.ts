@@ -1,6 +1,9 @@
+import { getUserIsLoaded, getUserIsLoading } from './modules/user/reducers/user.reducer';
 import { Component, OnInit } from '@angular/core';
 import { RouteConfigLoadEnd, RouteConfigLoadStart, Router } from '@angular/router';
+import { select, Store } from '@ngrx/store';
 import { debounceTime, filter, tap } from 'rxjs/operators';
+import { UserLoadAction } from './modules/user/actions/user.actions';
 
 @Component({
     // eslint-disable-next-line @angular-eslint/component-selector
@@ -10,9 +13,14 @@ import { debounceTime, filter, tap } from 'rxjs/operators';
 export class AppComponent implements OnInit {
     public loadingLazyRoute: boolean | undefined;
 
-    public constructor(private readonly _router: Router) { }
+    public userIsLoading$ = this._store.pipe(select(getUserIsLoading));
+    public userIsLoaded$ = this._store.pipe(select(getUserIsLoaded));
+
+    public constructor(private readonly _router: Router, private readonly _store: Store) { }
 
     public ngOnInit(): void {
+        this._store.dispatch(UserLoadAction());
+
         this._router.events.pipe(
             filter(e => e instanceof RouteConfigLoadStart || e instanceof RouteConfigLoadEnd),
             tap(() => {

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { APP_DARK_THEME_CLASS_NAME } from 'src/constants';
+import { Store } from '@ngrx/store';
+import { UserToggleThemeAction } from 'src/app/modules/user/actions/user.actions';
 
 @Component({
     selector: 'jwt-header',
@@ -7,8 +8,9 @@ import { APP_DARK_THEME_CLASS_NAME } from 'src/constants';
     styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
+    public constructor(private readonly _store: Store) {}
+
     public toggleTheme(): void {
-        // TODO: move execution to ngrx effects
-        document.documentElement.classList.toggle(APP_DARK_THEME_CLASS_NAME);
+        this._store.dispatch(UserToggleThemeAction());
     }
 }

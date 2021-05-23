@@ -1,5 +1,5 @@
-<router-outlet *ngIf="!loadingLazyRoute; else loadingState"></router-outlet>
+<router-outlet *ngIf="!loadingLazyRoute && (userIsLoaded$ | async); else loadingState"></router-outlet>
 
 <ng-template #loadingState>
-    <jwt-default-loader></jwt-default-loader>
+    <jwt-default-loader *ngIf="userIsLoading$ | async"></jwt-default-loader>
 </ng-template>
