@@ -8,7 +8,7 @@ import {
     UserSetThemeAction,
     UserToggleThemeAction,
 } from '../actions/user.actions';
-import { catchError, distinct, map, switchMap, tap, withLatestFrom } from 'rxjs/operators';
+import { catchError, map, tap, withLatestFrom } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { select, Store } from '@ngrx/store';
 import { ApplicationThemes, JwtUser } from 'src/types';

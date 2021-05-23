@@ -26,6 +26,7 @@
                 "plugin:@angular-eslint/ng-cli-compat--formatting-add-on",
                 "plugin:@angular-eslint/template/process-inline-templates"
             ],
+            "plugins": ["unused-imports"],
             "rules": {
                 "@angular-eslint/component-selector": [
                     "warn",
@@ -72,7 +73,15 @@
                 "no-extra-semi": "error",
                 "no-shadow": "off",
                 "@typescript-eslint/no-shadow": "error",
-                "@typescript-eslint/no-inferrable-types": "off"
+                "@typescript-eslint/no-inferrable-types": "off",
+                "unused-imports/no-unused-imports": "error",
+                "unused-imports/no-unused-vars": [
+                    "warn",
+                    {
+                        "args": "after-used",
+                        "argsIgnorePattern": "^_"
+                    }
+                ]
             }
         },
         /**

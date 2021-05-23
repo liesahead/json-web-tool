@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { JwtUser } from 'src/types';
-import { coerceStringProperty } from 'src/utils';
 
 const USER_LOCAL_STORAGE_KEY = 'JWT_USER';
 

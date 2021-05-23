@@ -1,5 +1,3 @@
-import { FormControl } from '@angular/forms';
-
 export enum ApplicationThemes {
     Dark = 'Dark',
     Light = 'Light',
