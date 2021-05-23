@@ -4,13 +4,13 @@ JSON web tool is a utility that comes in handy when you need to compare, merge, 
 
 ## Roadmap
 
-### First release.
+### First release:
 - Add possibility to choose system language (i18n).
 - Add `About` page.
 - Add `Not found` page.
 - Add editors with basic functionality - 2 files merge.
 
-### Upcoming releases.
+### Upcoming releases:
 - Bugfixing.
 - Extending functionality of the tool.
 - Implement reasonable feature requests from users.
