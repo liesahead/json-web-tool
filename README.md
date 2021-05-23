@@ -5,6 +5,9 @@ JSON web tool is a utility that comes in handy when you need to compare, merge, 
 ## Roadmap
 
 ### First release:
+- ~~Set up multiple application themes.~~
+- ~~Possibility to switch app theme.~~
+- ~~Save user settings (currently only theme) to local storage.~~
 - Add possibility to choose system language (i18n).
 - Add `About` page.
 - Add `Not found` page.
