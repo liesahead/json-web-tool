@@ -1,9 +1,10 @@
 <mat-toolbar color="primary">
     <jwt-logo></jwt-logo>
 
-    <button mat-icon-button
-            matTooltip="Toggle theme"
+    <button *jwtResolve="(isDarkTheme$ | async) as isDarkTheme"
+            mat-icon-button
+            matTooltip="{{ isDarkTheme ? 'Switch to light theme' : 'Switch to dark theme' }}"
             (click)="toggleTheme()">
-        <mat-icon>format_color_fill</mat-icon>
+        <mat-icon>{{ isDarkTheme ? 'light_mode' : 'dark_mode' }}</mat-icon>
     </button>
 </mat-toolbar>
