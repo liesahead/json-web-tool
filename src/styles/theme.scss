@@ -1,6 +1,6 @@
-@import '../../styles/colors';
-
 @use '~@angular/material' as mat;
+
+@import '../../styles/colors';
 
 @include mat.core();
 

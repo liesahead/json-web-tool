@@ -1,6 +1,6 @@
-@import 'styles';
-
 @use '~@angular/material' as mat;
+
+@import 'styles';
 
 path {
     fill: mat.get-color-from-palette($color-light-accent);
