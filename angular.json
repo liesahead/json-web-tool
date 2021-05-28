@@ -16,6 +16,18 @@
             "root": "",
             "sourceRoot": "src",
             "prefix": "jwt",
+            "i18n": {
+                "locales": {
+                    "en": {
+                        "translation": "src/assets/i18n/messages.en.xlf",
+                        "baseHref": ""
+                    },
+                    "ru": {
+                        "translation": "src/assets/i18n/messages.ru.xlf",
+                        "baseHref": ""
+                    }
+                }
+            },
             "architect": {
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",

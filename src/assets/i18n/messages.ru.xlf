@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="55f727ffd05ad8ab3efbec334683bae6aeb7abd6" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ isDarkTheme ? &apos;Tooltip switch to light theme&apos; : &apos;Tooltip switch to dark theme&apos; }}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{ isDarkTheme ? &apos;Включить светлую тему&apos; : &apos;Включить тёмную тему&apos; }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/header/components/header/header.component.html</context>
+          <context context-type="linenumber">6,7</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

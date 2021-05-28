@@ -3,7 +3,8 @@
 
     <button *jwtResolve="(isDarkTheme$ | async) as isDarkTheme"
             mat-icon-button
-            matTooltip="{{ isDarkTheme ? 'Switch to light theme' : 'Switch to dark theme' }}"
+            matTooltip="{{ isDarkTheme ? 'Tooltip switch to light theme' : 'Tooltip switch to dark theme' }}"
+            i18n-matTooltip
             (click)="toggleTheme()">
         <mat-icon>{{ isDarkTheme ? 'light_mode' : 'dark_mode' }}</mat-icon>
     </button>
