@@ -24,7 +24,7 @@ JSON web tool is a utility that comes in handy when you need to compare, merge, 
 2. Create a new branch from `development` and checkout to it.
 3. If you do not have `@angular/cli` installed globally then you need to install it.
 4. Run `yarn` or `yarn install` to install required project dependencies.
-5. Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+5. Run `yarn dev` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 6. Make changes and create commits.
 7. Run lint.
 8. Run tests.
