@@ -12,7 +12,7 @@ import { catchError, map, tap, withLatestFrom } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { select, Store } from '@ngrx/store';
 import { ApplicationThemes, JwtUser } from 'src/types';
-import { APP_DARK_THEME_CLASS_NAME } from 'src/constants';
+import { JwtConstants } from 'src/constants';
 import { getUser } from '../reducers/user.reducer';
 
 @Injectable()
@@ -78,11 +78,11 @@ export class UserEffects {
     );
 
     private toogleDarkTheme(force?: boolean): void {
-        document.documentElement.classList.toggle(APP_DARK_THEME_CLASS_NAME, force);
+        document.documentElement.classList.toggle(JwtConstants.appDarkThemeClassName, force);
     }
 
     private getCurrentTheme(): ApplicationThemes {
-        return document.documentElement.classList.contains(APP_DARK_THEME_CLASS_NAME)
+        return document.documentElement.classList.contains(JwtConstants.appDarkThemeClassName)
             ? ApplicationThemes.Dark
             : ApplicationThemes.Light;
     }
