@@ -48,7 +48,6 @@ mat-dialog-container.mat-dialog-container {
 
 @include for-dark-theme-no-encapsulation {
     mat-dialog-container.mat-dialog-container {
-
         .mat-dialog-content,
         .mat-dialog-actions {
             background-color: mat.get-color-from-palette($color-dark-primary, 'lighter-contrast');

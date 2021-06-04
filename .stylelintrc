@@ -21,6 +21,7 @@
         "selector-combinator-space-after": "always",
         "string-quotes": "single",
         "no-missing-end-of-source-newline": null,
-        "no-descending-specificity": null
+        "no-descending-specificity": null,
+        "no-invalid-position-at-import-rule": null
     }
 }
