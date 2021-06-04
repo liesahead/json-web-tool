@@ -17,6 +17,10 @@ export class UserSettingsDialogComponent implements OnInit {
         return this.form.controls as Record<string, FormControl>;
     }
 
+    public get hasUnsavedChanges(): boolean {
+        return this.form?.dirty;
+    }
+
     public userIsSaving$ = this._store.pipe(select(getUserIsSaving));
 
     public form: FormGroup;

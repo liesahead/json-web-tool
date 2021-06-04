@@ -40,7 +40,7 @@
 <mat-dialog-actions *jwtResolve="(userIsSaving$ | async) as userIsSaving">
     <button mat-raised-button
             color="primary"
-            [disabled]="userIsSaving"
+            [disabled]="!hasUnsavedChanges || userIsSaving"
             (click)="save()">
         {{ 'shared.saveAndClose' | translate }}
         <mat-spinner *ngIf="userIsSaving"
