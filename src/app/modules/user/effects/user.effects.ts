@@ -126,10 +126,8 @@ export class UserEffects {
     );
 
     private setUserPreferences(user: JwtUser): void {
-        // Set language
         this._translateService.use(user.language);
 
-        // Set theme
         JwtUtils.setTheme(user.theme);
     }
 }
