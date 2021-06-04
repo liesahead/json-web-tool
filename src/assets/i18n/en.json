@@ -1,6 +1,21 @@
 {
+    "shared": {
+        "save": "Save",
+        "saveAndClose": "Save and close",
+        "cancel": "Cancel",
+        "validation": {
+            "required": "This field is required."
+        }
+    },
     "header": {
         "setDarkTheme": "Switch to dark theme",
-        "setLightTheme": "Switch to light theme"
+        "setLightTheme": "Switch to light theme",
+        "settings": "Settings",
+        "github": "GitHub"
+    },
+    "settings": {
+        "language": "Language",
+        "theme": "Theme",
+        "title": "Preferences"
     }
 }

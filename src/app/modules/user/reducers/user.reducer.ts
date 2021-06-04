@@ -1,4 +1,4 @@
-import { UserSetThemeAction } from './../actions/user.actions';
+import { UserSaveAction, UserSaveFailAction, UserSaveSuccessAction, UserSetThemeAction } from './../actions/user.actions';
 import { createFeatureSelector, createReducer, createSelector, on } from '@ngrx/store';
 import { JwtUser } from 'src/types';
 import { UserLoadAction, UserLoadFailAction, UserLoadSuccessAction } from '../actions/user.actions';
@@ -7,12 +7,14 @@ interface IUserState {
     user: JwtUser;
     loading: boolean;
     loaded: boolean;
+    saving: boolean;
 }
 
 export const initialState: IUserState = {
     user: null,
     loading: false,
     loaded: false,
+    saving: false,
 };
 
 export const userReducer = createReducer(
@@ -31,6 +33,19 @@ export const userReducer = createReducer(
         ...state,
         loading: false,
     })),
+    on(UserSaveAction, (state) => ({
+        ...state,
+        saving: true,
+    })),
+    on(UserSaveSuccessAction, (state, { user }) => ({
+        ...state,
+        user,
+        saving: false,
+    })),
+    on(UserSaveFailAction, (state) => ({
+        ...state,
+        saving: false,
+    })),
     on(UserSetThemeAction, (state, { theme }) => ({
         ...state,
         user: new JwtUser({
@@ -45,3 +60,4 @@ const selectState = createFeatureSelector<IUserState>('user');
 export const getUserIsLoading = createSelector(selectState, (state) => state.loading);
 export const getUserIsLoaded = createSelector(selectState, (state) => state.loaded);
 export const getUser = createSelector(selectState, (state) => state.user);
+export const getUserIsSaving = createSelector(selectState, (state) => state.saving);

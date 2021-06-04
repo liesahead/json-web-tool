@@ -4,3 +4,9 @@
         @content;
     }
 }
+
+@mixin for-dark-theme-no-encapsulation {
+    #{ $dark-theme-selector } {
+        @content;
+    }
+}

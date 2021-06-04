@@ -1,0 +1,62 @@
+@use '~@angular/material'as mat;
+
+@import 'styles';
+
+mat-dialog-container.mat-dialog-container {
+    $side-padding: 20px;
+
+    background: none !important;
+    box-shadow: none !important;
+    padding   : 0;
+
+    .mat-dialog-title,
+    .mat-dialog-content,
+    .mat-dialog-actions {
+        border-radius: 5px;
+        margin       : 0 0 5px;
+    }
+
+    .mat-dialog-content,
+    .mat-dialog-actions {
+        background-color: mat.get-color-from-palette($color-light-primary, 'default-contrast');
+    }
+
+    .mat-dialog-title {
+        align-items     : center;
+        background-color: mat.get-color-from-palette($color-light-primary);
+        color           : mat.get-color-from-palette($color-light-primary, 'default-contrast');
+        display         : flex;
+        font-weight     : 500;
+        height          : 55px;
+        padding         : 0 $side-padding;
+    }
+
+    .mat-dialog-content {
+        padding: 40px $side-padding;
+    }
+
+    .mat-dialog-actions {
+        box-sizing     : border-box;
+        display        : flex;
+        flex-shrink    : 0;
+        flex-wrap      : wrap;
+        justify-content: flex-end;
+        margin         : 5px 0 0;
+        padding        : 10px $side-padding;
+    }
+}
+
+@include for-dark-theme-no-encapsulation {
+    mat-dialog-container.mat-dialog-container {
+
+        .mat-dialog-content,
+        .mat-dialog-actions {
+            background-color: mat.get-color-from-palette($color-dark-primary, 'lighter-contrast');
+        }
+
+        .mat-dialog-title {
+            background-color: mat.get-color-from-palette($color-dark-primary);
+            color           : mat.get-color-from-palette($color-dark-primary, 'default-contrast');
+        }
+    }
+}

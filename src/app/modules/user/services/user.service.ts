@@ -7,7 +7,7 @@ const USER_LOCAL_STORAGE_KEY = 'JWT_USER';
     providedIn: 'root',
 })
 export class UserService {
-    public setUser(user: JwtUser): void {
+    public saveUser(user: JwtUser): void {
         try {
             const userStringified = JSON.stringify(user ?? undefined);
             localStorage.setItem(USER_LOCAL_STORAGE_KEY, userStringified);

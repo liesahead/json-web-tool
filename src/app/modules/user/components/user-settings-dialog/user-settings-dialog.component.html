@@ -1,0 +1,57 @@
+<h1 mat-dialog-title>{{ 'settings.title' | translate }}</h1>
+
+<mat-dialog-content>
+    <form *ngIf="form; else preloader"
+          [formGroup]="form">
+        <mat-form-field appearance="fill">
+            <mat-label>{{ 'settings.theme' | translate }}</mat-label>
+            <mat-select [formControl]="formControls.theme"
+                        required>
+                <mat-option *ngFor="let theme of themes"
+                            [value]="theme">
+                    {{ theme | translate }}
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="formControls.theme.hasError('required')">
+                {{ 'shared.validation.required' | translate }}
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>{{ 'settings.language' | translate }}</mat-label>
+            <mat-select [formControl]="formControls.language"
+                        required>
+                <mat-option *ngFor="let language of languages"
+                            [value]="language.name">
+                    {{ language.displayName }}
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="formControls.language.hasError('required')">
+                {{ 'shared.validation.required' | translate }}
+            </mat-error>
+        </mat-form-field>
+    </form>
+
+    <ng-template #preloader>
+        <default-loader></default-loader>
+    </ng-template>
+</mat-dialog-content>
+
+<mat-dialog-actions *jwtResolve="(userIsSaving$ | async) as userIsSaving">
+    <button mat-raised-button
+            color="primary"
+            [disabled]="userIsSaving"
+            (click)="save()">
+        {{ 'shared.saveAndClose' | translate }}
+        <mat-spinner *ngIf="userIsSaving"
+                     diameter="25">
+        </mat-spinner>
+    </button>
+
+    <button color="warn"
+            [disabled]="userIsSaving"
+            mat-raised-button
+            mat-dialog-close>
+        {{ 'shared.cancel' | translate }}
+    </button>
+</mat-dialog-actions>

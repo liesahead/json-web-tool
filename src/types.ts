@@ -1,3 +1,5 @@
+import { JwtConstants } from './constants';
+
 export enum ApplicationThemes {
     Dark = 'Dark',
     Light = 'Light',
@@ -8,20 +10,18 @@ export interface ILanguage {
     displayName: string;
 }
 
-export interface IJwtUser {
-    theme?: ApplicationThemes | null | undefined;
+export interface ITranslatableSelectValue {
+    value: string;
+    displayValue: string;
 }
 
-export class JwtUser implements IJwtUser {
-    public theme: ApplicationThemes = ApplicationThemes.Light;
+export class JwtUser {
+    public theme = ApplicationThemes.Light;
+    public language = JwtConstants.defaultLanguage;
 
-    public constructor(data?: IJwtUser | null | undefined) {
+    public constructor(data?: Partial<JwtUser>) {
         if (data) {
-            Object.keys(data).forEach((key: keyof IJwtUser) => {
-                if (data.hasOwnProperty(key)) {
-                    this[key] = data[key];
-                }
-            });
+            Object.assign(this, data);
         }
     }
 }

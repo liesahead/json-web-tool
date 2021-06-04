@@ -8,6 +8,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { LogoComponent } from './components/logo/logo.component';
 import { JwtResolveModule } from '../jwt-resolve/jwt-resolve.module';
 import { TranslateModule } from '@ngx-translate/core';
+import { UserModule } from '../user/user.module';
 
 @NgModule({
     declarations: [HeaderComponent, LogoComponent],
@@ -20,6 +21,7 @@ import { TranslateModule } from '@ngx-translate/core';
         MatIconModule,
         MatTooltipModule,
         JwtResolveModule,
+        UserModule,
     ],
 })
 export class HeaderModule {}
