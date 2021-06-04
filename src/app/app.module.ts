@@ -10,14 +10,17 @@ import { AppComponent } from './app.component';
 import { routes } from './routes';
 import { LayoutModule } from './modules/layout/layout.module';
 import { UserModule } from './modules/user/user.module';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { JwtConstants } from 'src/constants';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { translationsLoaderFactory } from 'src/utils/translate-http-loader';
 
 @NgModule({
-    declarations: [
-        AppComponent
-    ],
+    declarations: [AppComponent],
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
+        HttpClientModule,
         RootStoreModule,
         UserModule,
         RouterModule.forRoot(routes),
@@ -25,8 +28,17 @@ import { UserModule } from './modules/user/user.module';
         DefaultLoaderModule,
         MatButtonModule,
         MatIconModule,
+        TranslateModule.forRoot({
+            defaultLanguage: JwtConstants.defaultLanguage,
+            loader: {
+                provide: TranslateLoader,
+                useFactory: translationsLoaderFactory,
+                deps: [HttpClient],
+            },
+            isolate: false,
+        }),
     ],
     providers: [],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

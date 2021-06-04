@@ -1,4 +1,6 @@
 @import '../../styles';
+@import './material';
+@import './dialog';
 
 html,
 body {
@@ -14,13 +16,4 @@ html {
 body {
     margin  : 0;
     overflow: auto;
-}
-
-// Angular material overrides below
-.mat-raised-button {
-    font-weight: 700;
-}
-
-.mat-tooltip {
-    font-size: 12px;
 }

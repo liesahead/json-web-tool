@@ -1,3 +1,4 @@
+import { UserSettingsOpenDialogAction } from './../../../user/actions/user.actions';
 import { Component } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
@@ -18,6 +19,10 @@ export class HeaderComponent {
     );
 
     public constructor(private readonly _store: Store) {}
+
+    public openSettingsDialog(): void {
+        this._store.dispatch(UserSettingsOpenDialogAction());
+    }
 
     public toggleTheme(): void {
         this._store.dispatch(UserToggleThemeAction());

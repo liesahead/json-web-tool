@@ -7,10 +7,21 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { LogoComponent } from './components/logo/logo.component';
 import { JwtResolveModule } from '../jwt-resolve/jwt-resolve.module';
+import { TranslateModule } from '@ngx-translate/core';
+import { UserModule } from '../user/user.module';
 
 @NgModule({
     declarations: [HeaderComponent, LogoComponent],
     exports: [HeaderComponent],
-    imports: [CommonModule, MatToolbarModule, MatButtonModule, MatIconModule, MatTooltipModule, JwtResolveModule],
+    imports: [
+        CommonModule,
+        TranslateModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatIconModule,
+        MatTooltipModule,
+        JwtResolveModule,
+        UserModule,
+    ],
 })
 export class HeaderModule {}

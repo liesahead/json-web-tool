@@ -1,0 +1,21 @@
+{
+    "shared": {
+        "save": "Сохранить",
+        "saveAndClose": "Сохранить и закрыть",
+        "cancel": "Отменить",
+        "validation": {
+            "required": "Обязательное поле."
+        }
+    },
+    "header": {
+        "setDarkTheme": "Включить тёмную тему",
+        "setLightTheme": "Включить светлую тему",
+        "settings": "Настройки",
+        "github": "GitHub"
+    },
+    "settings": {
+        "language": "Язык",
+        "theme": "Тема",
+        "title": "Настройки"
+    }
+}
