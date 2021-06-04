@@ -1,8 +1,6 @@
-@use '~@angular/material' as mat;
+@use '~@angular/material'as mat;
 
 @import '../../styles/colors';
-
-@include mat.core();
 
 $primary-theme: mat.define-light-theme(
     (
@@ -24,8 +22,27 @@ $dark-theme: mat.define-dark-theme(
     )
 );
 
-@include mat.all-component-themes($primary-theme);
+
+@include mat.core();
+
+// Apply the styles for each of the components used in your application by including each of their theme Sass mixins. (https://material.angular.io/guide/theming)
+// List of all themes: https://github.com/angular/components/blob/master/src/material/core/theming/_all-theme.scss
+@include mat.core-theme($primary-theme);
+@include mat.icon-theme($primary-theme);
+@include mat.progress-spinner-theme($primary-theme);
+@include mat.toolbar-theme($primary-theme);
+@include mat.button-theme($primary-theme);
+@include mat.tooltip-theme($primary-theme);
+@include mat.form-field-theme($primary-theme);
+@include mat.select-theme($primary-theme);
 
 #{ $dark-theme-selector } {
-    @include mat.all-component-colors($dark-theme);
+    @include mat.core-color($dark-theme);
+    @include mat.icon-color($dark-theme);
+    @include mat.progress-spinner-color($dark-theme);
+    @include mat.toolbar-color($dark-theme);
+    @include mat.button-color($dark-theme);
+    @include mat.tooltip-color($dark-theme);
+    @include mat.form-field-color($dark-theme);
+    @include mat.select-color($dark-theme);
 }
