@@ -35,6 +35,7 @@ $dark-theme: mat.define-dark-theme(
 @include mat.tooltip-theme($primary-theme);
 @include mat.form-field-theme($primary-theme);
 @include mat.select-theme($primary-theme);
+@include mat.snack-bar-theme($primary-theme);
 
 #{ $dark-theme-selector } {
     @include mat.core-color($dark-theme);
@@ -45,4 +46,5 @@ $dark-theme: mat.define-dark-theme(
     @include mat.tooltip-color($dark-theme);
     @include mat.form-field-color($dark-theme);
     @include mat.select-color($dark-theme);
+    @include mat.snack-bar-color($dark-theme);
 }

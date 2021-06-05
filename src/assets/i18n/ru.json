@@ -13,9 +13,14 @@
         "settings": "Настройки",
         "github": "GitHub"
     },
-    "settings": {
-        "language": "Язык",
-        "theme": "Тема",
-        "title": "Настройки"
+    "user": {
+        "settings": {
+            "language": "Язык",
+            "theme": "Тема",
+            "title": "Настройки"
+        },
+        "notifications": {
+            "saveSuccess": "Ваши настройки успешно сохранены."
+        }
     }
 }

@@ -1,4 +1,4 @@
-import { UserSaveAction, UserSaveFailAction, UserSaveSuccessAction, UserSetThemeAction } from './../actions/user.actions';
+import { UserSaveAction, UserSaveFailAction, UserSaveSuccessAction } from './../actions/user.actions';
 import { createFeatureSelector, createReducer, createSelector, on } from '@ngrx/store';
 import { JwtUser } from 'src/types';
 import { UserLoadAction, UserLoadFailAction, UserLoadSuccessAction } from '../actions/user.actions';
@@ -46,13 +46,6 @@ export const userReducer = createReducer(
         ...state,
         saving: false,
     })),
-    on(UserSetThemeAction, (state, { theme }) => ({
-        ...state,
-        user: new JwtUser({
-            ...state.user,
-            theme,
-        }),
-    }))
 );
 
 const selectState = createFeatureSelector<IUserState>('user');

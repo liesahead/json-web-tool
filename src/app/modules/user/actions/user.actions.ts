@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { ApplicationThemes, JwtUser } from 'src/types';
+import { JwtUser } from 'src/types';
 
 export const UserSettingsOpenDialogAction = createAction('[User] Open settings dialog');
 
@@ -12,4 +12,3 @@ export const UserSaveSuccessAction = createAction('[User] Save Success', props<{
 export const UserSaveFailAction = createAction('[User] Save Fail');
 
 export const UserToggleThemeAction = createAction('[User] Toogle theme');
-export const UserSetThemeAction = createAction('[User] Set theme', props<{ theme: ApplicationThemes }>());

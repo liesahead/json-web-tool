@@ -11,10 +11,9 @@ import {
     UserLoadAction,
     UserLoadFailAction,
     UserLoadSuccessAction,
-    UserSetThemeAction,
     UserToggleThemeAction,
 } from '../actions/user.actions';
-import { catchError, debounceTime, map, switchMap, tap, withLatestFrom } from 'rxjs/operators';
+import { catchError, map, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { select, Store } from '@ngrx/store';
 import { ApplicationThemes, JwtUser } from 'src/types';
@@ -23,6 +22,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { UserSettingsDialogComponent } from '../components/user-settings-dialog/user-settings-dialog.component';
 import { JwtUtils } from 'src/utils/utils';
 import { TranslateService } from '@ngx-translate/core';
+import { NotificationService } from '../../notification/services/notification.service';
 
 @Injectable()
 export class UserEffects {
@@ -31,7 +31,8 @@ export class UserEffects {
         private readonly _actions: Actions,
         private readonly _dialog: MatDialog,
         private readonly _userService: UserService,
-        private readonly _translateService: TranslateService
+        private readonly _translateService: TranslateService,
+        private readonly _notificationService: NotificationService
     ) {}
 
     public loadUser = createEffect(() =>
@@ -51,35 +52,23 @@ export class UserEffects {
     public toggleTheme = createEffect(() =>
         this._actions.pipe(
             ofType(UserToggleThemeAction),
-            map(() =>
-                UserSetThemeAction({
-                    theme:
-                        JwtUtils.getCurrentTheme() === ApplicationThemes.Dark
-                            ? ApplicationThemes.Light
-                            : ApplicationThemes.Dark,
+            withLatestFrom(this._store.pipe(select(getUser))),
+            map(([_, user]) =>
+                UserSaveAction({
+                    user: new JwtUser({
+                        ...user,
+                        theme: user.theme === ApplicationThemes.Dark ? ApplicationThemes.Light : ApplicationThemes.Dark,
+                    }),
                 })
             )
         )
     );
 
-    public setTheme = createEffect(
-        () =>
-            this._actions.pipe(
-                ofType(UserSetThemeAction),
-                tap(({ theme }) => JwtUtils.toogleDarkTheme(theme ? theme === ApplicationThemes.Dark : undefined))
-            ),
-        { dispatch: false }
-    );
-
     public saveUser = createEffect(() =>
         this._actions.pipe(
             ofType(UserSaveAction),
-            // To imitate that saving takes some time :) Just having fun, let's remove later?
-            debounceTime(400),
             map(({ dialogId, user }) => {
                 this._userService.saveUser(user);
-
-                // TODO: show notification (snackbar?)
 
                 return UserSaveSuccessAction({ dialogId, user });
             }),
@@ -95,18 +84,8 @@ export class UserEffects {
                     this.setUserPreferences(user);
 
                     this._dialog.getDialogById(dialogId)?.close();
-                })
-            ),
-        { dispatch: false }
-    );
 
-    public saveUserOnThemeSet = createEffect(
-        () =>
-            this._actions.pipe(
-                ofType(UserSetThemeAction),
-                withLatestFrom(this._store.pipe(select(getUser))),
-                tap(([_, user]) => {
-                    this._userService.saveUser(user);
+                    this._notificationService.success('user.notifications.saveSuccess');
                 })
             ),
         { dispatch: false }

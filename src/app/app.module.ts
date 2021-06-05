@@ -14,6 +14,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { JwtConstants } from 'src/constants';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { translationsLoaderFactory } from 'src/utils/translate-http-loader';
+import { NotificationModule } from './modules/notification/notification.module';
 
 @NgModule({
     declarations: [AppComponent],
@@ -28,6 +29,7 @@ import { translationsLoaderFactory } from 'src/utils/translate-http-loader';
         DefaultLoaderModule,
         MatButtonModule,
         MatIconModule,
+        NotificationModule,
         TranslateModule.forRoot({
             defaultLanguage: JwtConstants.defaultLanguage,
             loader: {

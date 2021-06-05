@@ -10,6 +10,7 @@
 
         <button *jwtResolve="(isDarkTheme$ | async) as isDarkTheme"
                 color="secondary"
+                [disabled]="isUserSaving$ | async"
                 mat-icon-button
                 matTooltip="{{ (isDarkTheme ? 'header.setLightTheme' : 'header.setDarkTheme') | translate }}"
                 (click)="toggleTheme()">

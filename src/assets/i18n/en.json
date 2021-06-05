@@ -13,9 +13,14 @@
         "settings": "Settings",
         "github": "GitHub"
     },
-    "settings": {
-        "language": "Language",
-        "theme": "Theme",
-        "title": "Preferences"
+    "user": {
+        "settings": {
+            "language": "Language",
+            "theme": "Theme",
+            "title": "Preferences"
+        },
+        "notifications": {
+            "saveSuccess": "Your preferences have been successfully updated."
+        }
     }
 }

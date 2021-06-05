@@ -1,10 +1,10 @@
-<h1 mat-dialog-title>{{ 'settings.title' | translate }}</h1>
+<h1 mat-dialog-title>{{ 'user.settings.title' | translate }}</h1>
 
 <mat-dialog-content>
     <form *ngIf="form; else preloader"
           [formGroup]="form">
         <mat-form-field appearance="fill">
-            <mat-label>{{ 'settings.theme' | translate }}</mat-label>
+            <mat-label>{{ 'user.settings.theme' | translate }}</mat-label>
             <mat-select [formControl]="formControls.theme"
                         required>
                 <mat-option *ngFor="let theme of themes"
@@ -18,7 +18,7 @@
         </mat-form-field>
 
         <mat-form-field appearance="fill">
-            <mat-label>{{ 'settings.language' | translate }}</mat-label>
+            <mat-label>{{ 'user.settings.language' | translate }}</mat-label>
             <mat-select [formControl]="formControls.language"
                         required>
                 <mat-option *ngFor="let language of languages"

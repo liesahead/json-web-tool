@@ -1,0 +1,22 @@
+@use '~@angular/material' as mat;
+
+@import 'styles';
+
+:host {
+    align-items    : center;
+    display        : flex;
+    justify-content: space-between;
+}
+
+::ng-deep {
+    .mat-snack-bar-container.jwt-error-notification {
+        background: mat.get-color-from-palette($color-light-warn);
+    }
+
+    @include for-dark-theme-no-encapsulation {
+        .mat-snack-bar-container.jwt-error-notification {
+            background: mat.get-color-from-palette($color-dark-warn);
+            color     : mat.get-color-from-palette($color-dark-warn, 'default-contrast');
+        }
+    }
+}

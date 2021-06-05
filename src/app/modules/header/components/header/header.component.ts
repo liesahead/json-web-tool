@@ -4,7 +4,7 @@ import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { UserToggleThemeAction } from 'src/app/modules/user/actions/user.actions';
-import { getUser } from 'src/app/modules/user/reducers/user.reducer';
+import { getUser, getUserIsSaving } from 'src/app/modules/user/reducers/user.reducer';
 import { ApplicationThemes } from 'src/types';
 
 @Component({
@@ -17,6 +17,7 @@ export class HeaderComponent {
         select(getUser),
         map((u) => u?.theme === ApplicationThemes.Dark)
     );
+    public isUserSaving$ = this._store.pipe(select(getUserIsSaving));
 
     public constructor(private readonly _store: Store) {}
 
